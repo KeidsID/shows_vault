@@ -1,0 +1,17 @@
+# https://github.com/hyiso/commitlint/blob/main/lib/commitlint.yaml
+include: package:commitlint_cli/commitlint.yaml
+
+# https://hyiso.github.io/commitlint/#/references-rules
+rules:
+  scope-enum:
+    - 2
+    - always
+    - - domain
+      - infrastructures
+      - use_cases
+      - interfaces
+      - lib
+      - root
+  references-empty:
+    - 2
+    - never
