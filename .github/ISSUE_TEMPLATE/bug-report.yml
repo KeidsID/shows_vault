@@ -1,0 +1,66 @@
+name: 🪲 Bug Report
+description: Report a bug
+title: "fix: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the sections below to help everyone identify and fix the bug
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe your issue
+      placeholder: When I click here this happens
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to page X
+        2. Click here
+        3. Look there
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What was the expected result?
+      placeholder: I expected this to happen
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What was the actual result?
+      placeholder: This happened
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Put here any screenshots or videos (optional)
+  - type: dropdown
+    id: OS
+    attributes:
+      label: "What OS are you seeing the problem on?"
+      multiple: true
+      options:
+        - "Android"
+        - "iOS"
+        - "Other (mention in the description)"
+    validations:
+      required: true
+  - type: dropdown
+    id: Severity
+    attributes:
+      label: "Severity"
+      options:
+        - "Critical (S1)"
+        - "Major (S2)"
+        - "Minor (S3)"
+        - "Trivial (S4)"
+    validations:
+      required: true

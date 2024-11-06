@@ -1,0 +1,69 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FL_VERSION: 3.24.0
+  FL_CHANNEL: stable
+
+jobs:
+  setup:
+    name: ⚙️ Setup Dependencies
+    runs-on: ubuntu-latest
+    outputs:
+      fl-cache-key: ${{ steps.fl-setup.outputs.CACHE-KEY }}
+      fl-pub-cache-key: ${{ steps.fl-setup.outputs.PUB-CACHE-KEY }}
+
+    steps:
+      - name: 📚 Code Checkout
+        uses: actions/checkout@v4
+
+      - name: 🐦 Setup Flutter SDK v3.24.0
+        id: fl-setup
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FL_VERSION }}
+          channel: ${{ env.FL_CHANNEL }}
+          cache: true
+          cache-key: |
+            fl-:channel:-v:version:-:os:-:arch:-ci-${{ hashFiles('./pubspec.lock') }}
+          pub-cache-key: |
+            fl-pub-:channel:-v:version:-:os:-:arch:-ci-${{ hashFiles('./pubspec.lock') }}
+
+      - name: 📦 Get dependencies
+        run: flutter pub get
+
+  lint:
+    name: 🕵️ Code Linting
+    needs: setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: package.json
+
+      - name: 📦 Restore Dependencies
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FL_VERSION }}
+          channel: ${{ env.FL_CHANNEL }}
+          cache: true
+          cache-key: ${{needs.setup.outputs.fl-cache-key}}
+          pub-cache-key: ${{needs.setup.outputs.fl-pub-cache-key}}
+
+      - name: 🕵️ Code Linting
+        run: flutter analyze lib
