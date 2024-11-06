@@ -51,11 +51,6 @@ jobs:
       - name: 📚 Code Checkout
         uses: actions/checkout@v4
 
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: package.json
-
       - name: 📦 Restore Dependencies
         uses: subosito/flutter-action@v2
         with:
