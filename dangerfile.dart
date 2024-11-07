@@ -16,11 +16,9 @@ abstract class ConventionalCommitConfig {
   static const List<String> types = [
     "build",
     "chore",
-    "ci",
     "docs",
     "feat",
     "fix",
-    "perf",
     "refactor",
     "revert",
     "style",
@@ -42,7 +40,7 @@ final config = PRConfig(
     '^(${ConventionalCommitConfig.types.join("|")})'
     '(\\((${ConventionalCommitConfig.scopes.join(("|"))})(\\/(${ConventionalCommitConfig.scopes.join(("|"))}))*\\))?'
     ': (.*\\S )?'
-    '(#|release-)\\d{1,6}((\\.\\d+){1,2})?\$',
+    '(sv|release)-\\d{1,6}((\\.\\d+){1,2})?\$',
   ),
   branchPattern: RegExp(
     '^\\d{1,6}-'
