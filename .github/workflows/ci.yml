@@ -11,13 +11,9 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  FL_VERSION: 3.24.0
-  FL_CHANNEL: stable
-
 jobs:
-  setup:
-    name: ⚙️ Setup Dependencies
+  dependencies:
+    name: 📦 Setup Dependencies
     runs-on: ubuntu-latest
     outputs:
       fl-cache-key: ${{ steps.fl-setup.outputs.CACHE-KEY }}
@@ -27,12 +23,12 @@ jobs:
       - name: 📚 Code Checkout
         uses: actions/checkout@v4
 
-      - name: 🐦 Setup Flutter SDK v3.24.0
+      - name: 🐦 Setup Flutter SDK
         id: fl-setup
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FL_VERSION }}
-          channel: ${{ env.FL_CHANNEL }}
+          flutter-version-file: ./pubspec.yaml
+          channel: stable
           cache: true
           cache-key: |
             fl-:channel:-v:version:-:os:-:arch:-ci-${{ hashFiles('./pubspec.lock') }}
@@ -43,8 +39,8 @@ jobs:
         run: flutter pub get
 
   lint:
-    name: 🕵️ Code Linting
-    needs: setup
+    name: 🔍 Code Linting
+    needs: dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -54,11 +50,11 @@ jobs:
       - name: 📦 Restore Dependencies
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FL_VERSION }}
-          channel: ${{ env.FL_CHANNEL }}
+          flutter-version-file: ./pubspec.yaml
+          channel: stable
           cache: true
-          cache-key: ${{needs.setup.outputs.fl-cache-key}}
-          pub-cache-key: ${{needs.setup.outputs.fl-pub-cache-key}}
+          cache-key: ${{needs.dependencies.outputs.fl-cache-key}}
+          pub-cache-key: ${{needs.dependencies.outputs.fl-pub-cache-key}}
 
-      - name: 🕵️ Code Linting
+      - name: 🔍 Code Linting
         run: flutter analyze lib
