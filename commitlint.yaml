@@ -3,6 +3,18 @@ include: package:commitlint_cli/commitlint.yaml
 
 # https://hyiso.github.io/commitlint/#/references-rules
 rules:
+  type-enum:
+    - 2
+    - always
+    - - build
+      - chore
+      - docs
+      - feat
+      - fix
+      - refactor
+      - revert
+      - style
+      - test
   scope-enum:
     - 2
     - always
@@ -13,5 +25,5 @@ rules:
       - lib
       - root
   references-empty:
-    - 2
+    - 1
     - never

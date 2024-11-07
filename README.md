@@ -116,25 +116,25 @@ Examples
 ### Commit Message / PR Title
 
 ```
-<type>(<scopes(optional)>): <content> #<issue-number>
+<type>(<scopes(optional)>): <content> sv-<issue-number>
 ```
 
 Examples
 
-- `feat: add tv shows service #25`
-- `fix(interfaces): fix unresponsive movies page #250`
-- `fix(domain/infrastructures): fix error movies fetch #502`
+- `feat: add tv shows service sv-25`
+- `fix(interfaces): fix unresponsive movies page sv-250`
+- `fix(domain/infrastructures): fix error movies fetch sv-502`
 
 ### Branch Name
 
 ```
-<type>-<content>-#<issue-number>
+<type>-<content>-sv-<issue-number>
 ```
 
 Examples
 
-- `chore-commilint-#1`
-- `fix-unresponsive-movies-page-#250`
+- `chore-commilint-sv-1`
+- `fix-unresponsive-movies-page-sv-250`
 
 ## Others
 
