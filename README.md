@@ -80,7 +80,7 @@ Anything you need to know if you want to contribute or just want to have a look.
 ## Project Structures
 
 This project is follow the
-[Clean Architecture](https://www.geeksforgeeks.org/complete-guide-to-clean-architecture/)
+[Clean Architecture](https://medium.com/@DrunknCode/clean-architecture-simplified-and-in-depth-guide-026333c54454)
 principles.
 
 1. `/lib` — Source code
