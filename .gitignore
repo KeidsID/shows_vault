@@ -48,3 +48,6 @@ app.*.map.json
 # Generated Files
 *.g.dart
 *.freezed.dart
+
+# Secrets
+*.env
