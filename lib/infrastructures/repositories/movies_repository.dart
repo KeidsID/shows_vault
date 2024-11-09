@@ -1,18 +1,14 @@
-import 'package:chopper/chopper.dart';
+import 'package:injectable/injectable.dart';
 
-import 'package:shows_vault/domain/dtos/dtos.dart';
-import 'package:shows_vault/domain/entities/entities.dart';
-import 'package:shows_vault/domain/repositories/repositories.dart';
+import 'package:shows_vault/domain/domain.dart';
 import '../data/remote/remote.dart';
 
+@LazySingleton(as: MoviesRepository)
 final class MoviesRepositoryImpl implements MoviesRepository {
-  late final MovieListRemoteData _movieListRemoteData;
-  late final GenresRemoteData _genresRemoteData;
+  final MovieListRemoteData _movieListRemoteData;
+  final GenresRemoteData _genresRemoteData;
 
-  MoviesRepositoryImpl(ChopperClient remoteClient) {
-    _movieListRemoteData = MovieListRemoteData.create(remoteClient);
-    _genresRemoteData = GenresRemoteData.create(remoteClient);
-  }
+  const MoviesRepositoryImpl(this._movieListRemoteData, this._genresRemoteData);
 
   @override
   Future<List<Genre>> getGenres() async {

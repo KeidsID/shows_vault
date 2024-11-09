@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
+import './service_locator.dart';
+
+Future<void> main() async {
+  await ServiceLocator.init();
+
   runApp(const MainApp());
 }
 

@@ -1,4 +1,5 @@
 import 'package:chopper/chopper.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:shows_vault/domain/dtos/dtos.dart';
 
@@ -7,8 +8,10 @@ import "../libs/converters/converters.dart";
 part 'movie_list.chopper.dart';
 
 /// https://developer.themoviedb.org/reference/movie-now-playing-list
+@lazySingleton
 @ChopperApi(baseUrl: "/movie")
 abstract class MovieListRemoteData extends ChopperService {
+  @factoryMethod
   static MovieListRemoteData create([ChopperClient? client]) =>
       _$MovieListRemoteData(client);
 
