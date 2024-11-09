@@ -8,6 +8,7 @@ environment:
   flutter: 3.24.0
 
 dependencies:
+  chopper: ^8.0.3
   envied: ^0.5.4+1
   flutter:
     sdk: flutter
@@ -25,6 +26,7 @@ dev_dependencies:
   freezed: ^2.5.7
   json_serializable: ^6.8.0
   envied_generator: ^0.5.4+1
+  chopper_generator: ^8.0.3
 
 flutter:
   uses-material-design: true
