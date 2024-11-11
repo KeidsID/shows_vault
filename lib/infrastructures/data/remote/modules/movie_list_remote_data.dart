@@ -5,7 +5,7 @@ import 'package:shows_vault/domain/dtos/dtos.dart';
 
 import "../libs/converters/converters.dart";
 
-part 'movie_list.chopper.dart';
+part 'movie_list_remote_data.chopper.dart';
 
 /// https://developer.themoviedb.org/reference/movie-now-playing-list
 @lazySingleton

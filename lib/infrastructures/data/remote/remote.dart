@@ -1,2 +1,2 @@
-export 'modules/genres/genres.dart';
-export 'modules/movie_list.dart';
+export './modules/genres/genres_remote_data.dart';
+export './modules/movie_list_remote_data.dart';

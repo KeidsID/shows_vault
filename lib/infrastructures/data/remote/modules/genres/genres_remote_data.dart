@@ -5,7 +5,7 @@ import 'package:shows_vault/domain/entities/entities.dart';
 
 import "./libs/converters/converters.dart";
 
-part "genres.chopper.dart";
+part "genres_remote_data.chopper.dart";
 
 /// https://developer.themoviedb.org/reference/genre-movie-list
 @lazySingleton

@@ -1,0 +1,21 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
+
+import 'package:shows_vault/domain/repositories/repositories.dart';
+import "../data/local/local.dart";
+
+@LazySingleton(as: FlutterAppRepository)
+final class FlutterAppRepositoryImpl implements FlutterAppRepository {
+  final ThemeModeLocalData _themeModeLocalData;
+
+  const FlutterAppRepositoryImpl(this._themeModeLocalData);
+
+  @override
+  FutureOr<ThemeMode> getThemeMode() => _themeModeLocalData.get();
+
+  @override
+  FutureOr<void> setThemeMode(ThemeMode themeMode) =>
+      _themeModeLocalData.set(themeMode);
+}
