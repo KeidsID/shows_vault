@@ -1,7 +1,10 @@
 import "package:injectable/injectable.dart";
 import "package:shows_vault/domain/dtos/dtos.dart";
 import "package:shows_vault/domain/repositories/repositories.dart";
-import "./use_case.dart";
+import "../use_case.dart";
+
+export 'package:shows_vault/domain/repositories/repositories.dart'
+    show GetMoviesType;
 
 @lazySingleton
 final class GetMoviesUseCase

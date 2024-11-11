@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:shows_vault/domain/entities/entities.dart';
 import 'package:shows_vault/domain/repositories/repositories.dart';
-import './use_case.dart';
+import '../use_case.dart';
 
 @lazySingleton
 final class GetGenresUseCase
