@@ -8,13 +8,13 @@ export 'package:shows_vault/domain/repositories/repositories.dart'
 
 @lazySingleton
 final class GetMoviesUseCase
-    implements UseCase<GetMoviesResponseDto, GetMoviesUseCaseParams> {
+    implements UseCase<Future<GetMoviesResponseDto>, GetMoviesUseCaseParams> {
   final MoviesRepository _moviesRepository;
 
   const GetMoviesUseCase(this._moviesRepository);
 
   @override
-  FutureOr<GetMoviesResponseDto> execute(GetMoviesUseCaseParams params) =>
+  Future<GetMoviesResponseDto> execute(GetMoviesUseCaseParams params) =>
       _moviesRepository.getMovies(params.type);
 }
 

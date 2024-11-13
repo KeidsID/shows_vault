@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
@@ -13,9 +11,9 @@ final class FlutterAppRepositoryImpl implements FlutterAppRepository {
   const FlutterAppRepositoryImpl(this._themeModeLocalData);
 
   @override
-  FutureOr<ThemeMode> getThemeMode() => _themeModeLocalData.get();
+  ThemeMode getThemeMode() => _themeModeLocalData.get();
 
   @override
-  FutureOr<void> setThemeMode(ThemeMode themeMode) =>
+  Future<bool> setThemeMode(ThemeMode themeMode) =>
       _themeModeLocalData.set(themeMode);
 }

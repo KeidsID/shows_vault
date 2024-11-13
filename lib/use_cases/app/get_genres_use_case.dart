@@ -5,13 +5,13 @@ import '../use_case.dart';
 
 @lazySingleton
 final class GetGenresUseCase
-    implements UseCase<List<Genre>, GetGenresUseCaseParams> {
+    implements UseCase<Future<List<Genre>>, GetGenresUseCaseParams> {
   final MoviesRepository _moviesRepository;
 
   const GetGenresUseCase(this._moviesRepository);
 
   @override
-  FutureOr<List<Genre>> execute(GetGenresUseCaseParams params) =>
+  Future<List<Genre>> execute(GetGenresUseCaseParams params) =>
       _moviesRepository.getGenres();
 }
 

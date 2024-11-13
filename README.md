@@ -62,6 +62,7 @@ Main packages that are used as foundation for this project.
 - [go_router](https://pub.dev/packages/go_router),
   [go_router_builder](https://pub.dev/packages/go_router_builder) -- Web
   friendly routing.
+- [riverpod](https://riverpod.dev) -- State management framework.
 
 Most of them need to generate its utilities with
 [build_runner](https://pub.dev/packages/build_runner).

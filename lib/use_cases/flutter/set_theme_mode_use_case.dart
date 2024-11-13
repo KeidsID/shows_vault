@@ -6,13 +6,13 @@ import '../use_case.dart';
 
 @lazySingleton
 final class SetThemeModeUseCase
-    implements UseCase<void, SetThemeModeUseCaseParams> {
+    implements UseCase<Future<bool>, SetThemeModeUseCaseParams> {
   final FlutterAppRepository _flutterAppRepository;
 
   SetThemeModeUseCase(this._flutterAppRepository);
 
   @override
-  FutureOr<void> execute(SetThemeModeUseCaseParams params) =>
+  Future<bool> execute(SetThemeModeUseCaseParams params) =>
       _flutterAppRepository.setThemeMode(params.mode);
 }
 

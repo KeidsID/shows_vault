@@ -10,7 +10,7 @@ final class GetThemeModeUseCase
   GetThemeModeUseCase(this._flutterAppRepository);
 
   @override
-  FutureOr<ThemeMode> execute(GetThemeModeUseCaseParams params) =>
+  ThemeMode execute(GetThemeModeUseCaseParams params) =>
       _flutterAppRepository.getThemeMode();
 }
 
