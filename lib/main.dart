@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './interfaces/router.dart';
 import './service_locator.dart';
 
 Future<void> main() async {
@@ -13,12 +14,8 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp.router(
+      routerConfig: appRouter,
     );
   }
 }

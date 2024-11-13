@@ -19,6 +19,7 @@ details that make your favorite titles memorable.
 - [Policies](#policies)
 - [Developer Section](#developer-section)
   - [Requirements](#requirements)
+  - [Dependencies](#dependencies)
   - [Setup](#setup)
   - [API Documentation](#api-documentation)
   - [Project Structures](#project-structures)
@@ -47,6 +48,24 @@ Anything you need to know if you want to contribute or just want to have a look.
   fvm use
   ```
 
+## Dependencies
+
+Main packages that are used as foundation for this project.
+
+- [injectable](https://pub.dev/packages/injectable) -- Dependency injection
+  framework.
+- [freezed](https://pub.dev/packages/freezed) -- Data model with short and
+  simple syntax.
+- [chopper](https://pub.dev/packages/chopper) -- HTTP client service.
+- [shared_preferences](https://pub.dev/packages/shared_preferences) -- Local
+  storage.
+- [go_router](https://pub.dev/packages/go_router),
+  [go_router_builder](https://pub.dev/packages/go_router_builder) -- Web
+  friendly routing.
+
+Most of them need to generate its utilities with
+[build_runner](https://pub.dev/packages/build_runner).
+
 ## Setup
 
 1. Install dependencies
@@ -61,16 +80,23 @@ Anything you need to know if you want to contribute or just want to have a look.
    dart run husky install
    ```
 
-3. Now you're good to go!
+3. Generate code.
 
    ```bash
-   flutter run -d <device-id>
+   dart run build_runner build -d
+   ```
 
+4. Now you're good to go!
+
+   ```bash
    # Check connected devices
    flutter devices
 
    # Check available emulators
    flutter emulators
+
+   # Run app
+   flutter run -d <device-id>
    ```
 
 ## API Documentation
