@@ -6,7 +6,7 @@ import "../use_case.dart";
 export 'package:shows_vault/domain/repositories/repositories.dart'
     show GetMoviesType;
 
-@lazySingleton
+@Singleton(signalsReady: true)
 final class GetMoviesUseCase
     implements UseCase<Future<GetMoviesResponseDto>, GetMoviesUseCaseParams> {
   final MoviesRepository _moviesRepository;

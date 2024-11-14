@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:shows_vault/domain/repositories/repositories.dart';
 import '../use_case.dart';
 
-@lazySingleton
+@Singleton(signalsReady: true)
 final class SetThemeModeUseCase
     implements UseCase<Future<bool>, SetThemeModeUseCaseParams> {
   final FlutterAppRepository _flutterAppRepository;

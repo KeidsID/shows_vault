@@ -31,11 +31,9 @@ abstract final class ServiceLocator {
   /// Initialize [Injectable](https://pub.dev/packages/injectable) services and
   /// check if all registered services are ready to use.
   static Future<void> init() {
-    _injectableInit();
-
-    return _locator.allReady();
+    return _injectableInit().allReady();
   }
 }
 
 @injectableInit
-void _injectableInit() => _locator.init();
+GetIt _injectableInit() => _locator.init();

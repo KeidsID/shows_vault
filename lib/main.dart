@@ -7,6 +7,8 @@ import './interfaces/router.dart';
 import './service_locator.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await ServiceLocator.init();
 
   usePathUrlStrategy();

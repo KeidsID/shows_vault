@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
 import 'package:shows_vault/domain/repositories/repositories.dart';
 import '../use_case.dart';
 
+@Singleton(signalsReady: true)
 final class GetThemeModeUseCase
     implements UseCase<ThemeMode, GetThemeModeUseCaseParams> {
   final FlutterAppRepository _flutterAppRepository;

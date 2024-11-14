@@ -3,7 +3,7 @@ import 'package:shows_vault/domain/entities/entities.dart';
 import 'package:shows_vault/domain/repositories/repositories.dart';
 import '../use_case.dart';
 
-@lazySingleton
+@Singleton(signalsReady: true)
 final class GetGenresUseCase
     implements UseCase<Future<List<Genre>>, GetGenresUseCaseParams> {
   final MoviesRepository _moviesRepository;
