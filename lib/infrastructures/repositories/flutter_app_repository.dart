@@ -14,6 +14,6 @@ final class FlutterAppRepositoryImpl implements FlutterAppRepository {
   ThemeMode getThemeMode() => _themeModeLocalData.get();
 
   @override
-  Future<bool> setThemeMode(ThemeMode themeMode) =>
+  Future<void> setThemeMode(ThemeMode themeMode) =>
       _themeModeLocalData.set(themeMode);
 }

@@ -6,7 +6,7 @@ import "../libs/constants/constants.dart";
 
 @lazySingleton
 final class ThemeModeLocalData {
-  final SharedPreferences _sharedPreferences;
+  final SharedPreferencesWithCache _sharedPreferences;
 
   const ThemeModeLocalData(this._sharedPreferences);
 
@@ -16,6 +16,6 @@ final class ThemeModeLocalData {
     return ThemeMode.values[cachedIndex ?? ThemeMode.system.index];
   }
 
-  Future<bool> set(ThemeMode themeMode) =>
+  Future<void> set(ThemeMode themeMode) =>
       _sharedPreferences.setInt(CacheKey.kThemeMode, themeMode.index);
 }

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart' show usePathUrlStrategy;
 
+import './domain/domain.dart';
 import './interfaces/providers/providers.dart';
-import './interfaces/router.dart';
+import './interfaces/router.dart' show appRouter;
 import './service_locator.dart';
 
 Future<void> main() async {
@@ -11,7 +12,9 @@ Future<void> main() async {
 
   await ServiceLocator.init();
 
-  usePathUrlStrategy();
+  if (ServiceLocator.find<ConfigService>().env.usePathUrlStrategy) {
+    usePathUrlStrategy();
+  }
 
   runApp(const ProviderScope(child: MainApp()));
 }

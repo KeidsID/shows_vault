@@ -15,10 +15,8 @@ class ThemeModeNotifier extends _$ThemeModeNotifier {
   }
 
   Future<void> setThemeMode(ThemeMode themeMode) async {
-    final isSuccess = await ServiceLocator.find<SetThemeModeUseCase>()
+    await ServiceLocator.find<SetThemeModeUseCase>()
         .execute(SetThemeModeUseCaseParams(themeMode));
-
-    if (!isSuccess) return;
 
     state = themeMode;
   }
