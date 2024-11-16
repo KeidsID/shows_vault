@@ -1,7 +1,7 @@
 /// Root routes defined here since
 /// [go_router_builder](https://pub.dev/packages/go_router_builder)
 /// decorators can only be defined in one file and [RouteData] classes.
-library interfaces_routes;
+library;
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

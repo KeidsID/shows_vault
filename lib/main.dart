@@ -10,11 +10,11 @@ import './service_locator.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await ServiceLocator.init();
-
   if (ServiceLocator.find<ConfigService>().env.usePathUrlStrategy) {
     usePathUrlStrategy();
   }
+
+  await ServiceLocator.init();
 
   runApp(const ProviderScope(child: MainApp()));
 }

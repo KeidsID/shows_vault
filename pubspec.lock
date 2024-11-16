@@ -210,10 +210,10 @@ packages:
     dependency: "direct dev"
     description:
       name: commitlint_cli
-      sha256: "78f6e1c2df3f4bdbf8c455d69311bd4c791de7e26d40df57cf33df068524cfe3"
+      sha256: "7882210129f2616d4899ad85073a75ef293deac693dd6f7dc4f0492b0758322b"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.2"
+    version: "0.8.1"
   convert:
     dependency: transitive
     description:
@@ -282,18 +282,18 @@ packages:
     dependency: "direct main"
     description:
       name: envied
-      sha256: bbff9c76120e4dc5e2e36a46690cf0a26feb65e7765633f4e8d916bcd173a450
+      sha256: "129a0dbf32b90344fa2e9d6943569fdec8f17904e66161e0a1f09ee3416508ae"
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.4+1"
+    version: "1.0.0"
   envied_generator:
     dependency: "direct dev"
     description:
       name: envied_generator
-      sha256: "517b70de08d13dcd40e97b4e5347e216a0b1c75c99e704f3c85c0474a392d14a"
+      sha256: "76aec98907872ce8488f021e68d213bd0d9bf224eb393a094be1708cc3180d41"
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.4+1"
+    version: "1.0.0"
   equatable:
     dependency: transitive
     description:
@@ -343,10 +343,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: "3f41d009ba7172d5ff9be5f6e6e6abb4300e263aab8866d2a0842ed2a70f8f0c"
+      sha256: "5398f14efa795ffb7a33e9b6a08798b26a180edac4ad7db3f231e40f82ce11e1"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0"
+    version: "5.0.0"
   flutter_riverpod:
     dependency: "direct main"
     description:
@@ -409,10 +409,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: ce89c5a993ca5eea74535f798478502c30a625ecb10a1de4d7fef5cd1bcac2a4
+      sha256: "8ae664a70174163b9f65ea68dd8673e29db8f9095de7b5cd00e167c621f4fef5"
       url: "https://pub.dev"
     source: hosted
-    version: "14.4.1"
+    version: "14.6.0"
   go_router_builder:
     dependency: "direct dev"
     description:
@@ -545,10 +545,10 @@ packages:
     dependency: transitive
     description:
       name: lints
-      sha256: "976c774dd944a42e83e2467f4cc670daef7eed6295b10b36ae8c85bcbf828235"
+      sha256: "3315600f3fb3b135be672bf4a178c55f274bebe368325ae18462c89ac1e3b413"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0"
+    version: "5.0.0"
   logging:
     dependency: transitive
     description:
@@ -702,7 +702,7 @@ packages:
     source: hosted
     version: "1.0.0"
   riverpod:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: riverpod
       sha256: "59062512288d3056b2321804332a13ffdd1bf16df70dcc8e506e411280a72959"
