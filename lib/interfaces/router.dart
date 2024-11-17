@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import "package:flutter/material.dart";
+import "package:go_router/go_router.dart";
 
-import './routes/routes.dart';
+import "routes/routes.dart";
 
 final appRouterKey = GlobalKey<NavigatorState>(debugLabel: 'app-router');
 

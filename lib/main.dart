@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_web_plugins/url_strategy.dart' show usePathUrlStrategy;
+import "package:flutter/material.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:flutter_web_plugins/url_strategy.dart" show usePathUrlStrategy;
 
-import './domain/domain.dart';
-import './interfaces/providers/providers.dart';
-import './interfaces/router.dart' show appRouter;
-import './service_locator.dart';
+import "domain/domain.dart" show ConfigService;
+import "interfaces/providers/providers.dart" show themeModeNotifierProvider;
+import "interfaces/router.dart" show appRouter;
+import "service_locator.dart" show ServiceLocator;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,1 +1,1 @@
-export './modules/theme_mode_local_data.dart';
+export "./modules/theme_mode_local_data.dart";

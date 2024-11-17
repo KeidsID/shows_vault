@@ -1,7 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
 
-part 'movie_entity.freezed.dart';
-part 'movie_entity.g.dart';
+part "movie_entity.freezed.dart";
+part "movie_entity.g.dart";
 
 @freezed
 class Movie with _$Movie {

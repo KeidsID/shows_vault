@@ -1,8 +1,8 @@
-import 'package:chopper/chopper.dart';
-import 'package:injectable/injectable.dart';
+import "package:chopper/chopper.dart";
+import "package:injectable/injectable.dart";
 
-import 'package:shows_vault/domain/services/services.dart';
-import './libs/constants/constants.dart';
+import "package:sv/domain/domain.dart";
+import "libs/constants/constants.dart";
 
 @module
 abstract class RemoteModule {

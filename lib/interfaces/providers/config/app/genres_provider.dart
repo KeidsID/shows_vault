@@ -1,9 +1,9 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import "package:flutter_riverpod/flutter_riverpod.dart";
+import "package:riverpod_annotation/riverpod_annotation.dart";
 
-import 'package:shows_vault/domain/entities/entities.dart';
-import 'package:shows_vault/service_locator.dart';
-import 'package:shows_vault/use_cases/use_cases.dart';
+import "package:sv/domain/domain.dart";
+import "package:sv/service_locator.dart";
+import "package:sv/use_cases/use_cases.dart";
 
 part "genres_provider.g.dart";
 

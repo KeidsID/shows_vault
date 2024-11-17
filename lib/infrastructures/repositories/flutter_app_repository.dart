@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
+import "package:flutter/material.dart";
+import "package:injectable/injectable.dart";
 
-import 'package:shows_vault/domain/repositories/repositories.dart';
+import "package:sv/domain/domain.dart";
 import "../data/local/local.dart";
 
 @LazySingleton(as: FlutterAppRepository)

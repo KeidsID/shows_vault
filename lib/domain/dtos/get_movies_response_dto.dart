@@ -1,9 +1,9 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
 
-import '../entities/entities.dart' show Movie;
+import "../entities/entities.dart" show Movie;
 
-part 'get_movies_response_dto.freezed.dart';
-part 'get_movies_response_dto.g.dart';
+part "get_movies_response_dto.freezed.dart";
+part "get_movies_response_dto.g.dart";
 
 @freezed
 class GetMoviesResponseDto with _$GetMoviesResponseDto {

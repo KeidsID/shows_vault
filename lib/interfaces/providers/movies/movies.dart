@@ -1,1 +1,1 @@
-export './movie_list_provider.dart';
+export "./movie_list_provider.dart";

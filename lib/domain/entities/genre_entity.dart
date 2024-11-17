@@ -1,7 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
 
-part 'genre_entity.freezed.dart';
-part 'genre_entity.g.dart';
+part "genre_entity.freezed.dart";
+part "genre_entity.g.dart";
 
 @freezed
 class Genre with _$Genre {

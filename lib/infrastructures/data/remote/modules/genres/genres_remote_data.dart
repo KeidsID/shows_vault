@@ -1,9 +1,9 @@
-import 'package:chopper/chopper.dart';
-import 'package:injectable/injectable.dart';
+import "package:chopper/chopper.dart";
+import "package:injectable/injectable.dart";
 
-import 'package:shows_vault/domain/entities/entities.dart';
+import "package:sv/domain/domain.dart";
 
-import "./libs/converters/converters.dart";
+import "libs/converters/converters.dart";
 
 part "genres_remote_data.chopper.dart";
 

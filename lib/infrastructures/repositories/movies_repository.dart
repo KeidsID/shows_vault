@@ -1,7 +1,7 @@
-import 'package:injectable/injectable.dart';
+import "package:injectable/injectable.dart";
 
-import 'package:shows_vault/domain/domain.dart';
-import '../data/remote/remote.dart';
+import "package:sv/domain/domain.dart";
+import "../data/remote/remote.dart";
 
 @LazySingleton(as: MoviesRepository)
 final class MoviesRepositoryImpl implements MoviesRepository {

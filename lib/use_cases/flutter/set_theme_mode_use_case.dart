@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
+import "package:flutter/material.dart";
+import "package:injectable/injectable.dart";
 
-import 'package:shows_vault/domain/repositories/repositories.dart';
-import '../use_case.dart';
+import "package:sv/domain/domain.dart";
+import "../use_case.dart";
 
 @Singleton(signalsReady: true)
 final class SetThemeModeUseCase

@@ -2,7 +2,7 @@ import "dart:async";
 
 import "package:chopper/chopper.dart";
 
-import "package:shows_vault/domain/dtos/dtos.dart";
+import "package:sv/domain/dtos/dtos.dart";
 
 class GetMoviesConverter extends JsonConverter {
   const GetMoviesConverter();

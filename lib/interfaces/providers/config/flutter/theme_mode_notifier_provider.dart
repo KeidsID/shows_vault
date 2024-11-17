@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import "package:flutter/material.dart";
+import "package:riverpod_annotation/riverpod_annotation.dart";
 
-import 'package:shows_vault/service_locator.dart';
-import 'package:shows_vault/use_cases/use_cases.dart';
+import "package:sv/service_locator.dart";
+import "package:sv/use_cases/use_cases.dart";
 
-part 'theme_mode_notifier_provider.g.dart';
+part "theme_mode_notifier_provider.g.dart";
 
 @riverpod
 class ThemeModeNotifier extends _$ThemeModeNotifier {

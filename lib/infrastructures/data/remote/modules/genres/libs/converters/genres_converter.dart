@@ -1,8 +1,8 @@
-import 'dart:async';
+import "dart:async";
 
-import 'package:chopper/chopper.dart';
+import "package:chopper/chopper.dart";
 
-import "package:shows_vault/domain/entities/entities.dart";
+import "package:sv/domain/entities/entities.dart";
 
 class GenresConverter extends JsonConverter {
   const GenresConverter();

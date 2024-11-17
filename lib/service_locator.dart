@@ -1,5 +1,5 @@
-import 'package:get_it/get_it.dart';
-import 'package:injectable/injectable.dart';
+import "package:get_it/get_it.dart";
+import "package:injectable/injectable.dart";
 
 import "service_locator.config.dart";
 
@@ -14,7 +14,7 @@ final _locator = GetIt.instance;
 /// [Injectable](https://pub.dev/packages/injectable).
 ///
 /// ```dart
-/// import 'package:shows_vault/service_locator.dart';
+/// import "package:sv/service_locator.dart";
 ///
 /// Future<void> main() async {
 ///   await ServiceLocator.init();
@@ -37,5 +37,5 @@ abstract final class ServiceLocator {
   }
 }
 
-@injectableInit
+@InjectableInit(preferRelativeImports: true)
 Future<GetIt> _injectableInit() => _locator.init();

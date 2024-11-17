@@ -3,10 +3,10 @@
 /// decorators can only be defined in one file and [RouteData] classes.
 library;
 
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import "package:flutter/material.dart";
+import "package:go_router/go_router.dart";
 
-part 'routes.g.dart';
+part "routes.g.dart";
 
 @TypedGoRoute<MoviesRoute>(path: '/movies')
 class MoviesRoute extends GoRouteData {

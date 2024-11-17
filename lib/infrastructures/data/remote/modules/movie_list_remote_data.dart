@@ -1,11 +1,11 @@
-import 'package:chopper/chopper.dart';
-import 'package:injectable/injectable.dart';
+import "package:chopper/chopper.dart";
+import "package:injectable/injectable.dart";
 
-import 'package:shows_vault/domain/dtos/dtos.dart';
+import "package:sv/domain/domain.dart";
 
 import "../libs/converters/converters.dart";
 
-part 'movie_list_remote_data.chopper.dart';
+part "movie_list_remote_data.chopper.dart";
 
 /// https://developer.themoviedb.org/reference/movie-now-playing-list
 @lazySingleton

@@ -1,10 +1,8 @@
 import "package:injectable/injectable.dart";
-import "package:shows_vault/domain/dtos/dtos.dart";
-import "package:shows_vault/domain/repositories/repositories.dart";
+import "package:sv/domain/domain.dart";
 import "../use_case.dart";
 
-export 'package:shows_vault/domain/repositories/repositories.dart'
-    show GetMoviesType;
+export "package:sv/domain/domain.dart" show GetMoviesType;
 
 @Singleton(signalsReady: true)
 final class GetMoviesUseCase
