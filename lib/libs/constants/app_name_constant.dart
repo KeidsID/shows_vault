@@ -1,0 +1,1 @@
+const kAppName = 'Shows Vault';

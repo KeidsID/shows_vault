@@ -2,19 +2,21 @@ import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:flutter_web_plugins/url_strategy.dart" show usePathUrlStrategy;
 
-import "domain/domain.dart" show ConfigService;
-import "interfaces/providers/providers.dart" show themeModeNotifierProvider;
-import "interfaces/router.dart" show appRouter;
-import "service_locator.dart" show ServiceLocator;
+import "domain/domain.dart";
+import "interfaces/providers/providers.dart";
+import "interfaces/router.dart";
+import "libs/constants/constants.dart";
+import "service_locator.dart";
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (ServiceLocator.find<ConfigService>().env.usePathUrlStrategy) {
-    usePathUrlStrategy();
-  }
-
   await ServiceLocator.init();
+
+  final configService = ServiceLocator.find<ConfigService>();
+  final EnvSchema(:isUsePathUrlStrategy) = configService.env;
+
+  if (isUsePathUrlStrategy) usePathUrlStrategy();
 
   runApp(const ProviderScope(child: MainApp()));
 }
@@ -28,6 +30,7 @@ class MainApp extends ConsumerWidget {
 
     return MaterialApp.router(
       routerConfig: appRouter,
+      title: kAppName,
       themeMode: themeMode,
     );
   }

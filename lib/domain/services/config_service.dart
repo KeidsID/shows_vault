@@ -7,6 +7,6 @@ abstract interface class ConfigService {
 abstract interface class EnvSchema {
   const EnvSchema();
 
-  bool get usePathUrlStrategy;
+  bool get isUsePathUrlStrategy;
   String get tmdbAccessToken;
 }

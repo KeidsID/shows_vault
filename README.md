@@ -1,12 +1,9 @@
-[license]: https://www.tldrlegal.com/license/mit-license
-[tmdb]: https://www.themoviedb.org/
-[tmdb-terms]: https://www.themoviedb.org/terms-of-use
-[tmdb-api]: https://developers.themoviedb.org
-
 # Shows Vault
 
-![Dart version 3.5.0](https://img.shields.io/badge/SDK-v3.5.0-red?style=flat&logo=dart&logoColor=2cb8f7&labelColor=333333&color=01579b)
-![Flutter version 3.24.0](https://img.shields.io/badge/SDK-v3.24.0-red?style=flat&logo=flutter&logoColor=2cb8f7&labelColor=333333&color=01579b)
+[dart-badge]: https://img.shields.io/badge/SDK-v3.5.0-red?style=flat&logo=dart&logoColor=2cb8f7&labelColor=333333&color=01579b
+[fl-badge]: https://img.shields.io/badge/SDK-v3.24.0-red?style=flat&logo=flutter&logoColor=2cb8f7&labelColor=333333&color=01579b
+
+![Dart version 3.5.0][dart-badge] ![Flutter version 3.24.0][fl-badge]
 
 Explore the world of movies and tv shows with **Shows Vault**, your go-to source
 for comprehensive information and in-depth credits on all your favorite films
@@ -26,70 +23,80 @@ details that make your favorite titles memorable.
   - [Git Conventions](#git-conventions)
   - [Others](#others)
 
-# Policies
+## Policies
+
+[license]: https://www.tldrlegal.com/license/mit-license
+[tmdb]: https://www.themoviedb.org/
+[tmdb-terms]: https://www.themoviedb.org/terms-of-use
 
 - Project is licensed under [MIT License][license].
 - Since this project is backed by [The Movie DB][tmdb], of course we need to
   follow their [Terms of Use][tmdb-terms].
 
-# Developer Section
+## Developer Section
 
 Anything you need to know if you want to contribute or just want to have a look.
 
-## Requirements
+### Requirements
 
-- [Flutter](https://docs.flutter.dev/release/archive) v3.24.0 for consistent
-  dependencies.
+[fl-archive]: https://docs.flutter.dev/release/archive
+[fvm]: https://fvm.app/documentation
 
-  You may use [fvm](https://fvm.app/documentation/getting-started/installation)
-  for easy installation.
+- [Flutter][fl-archive] v3.24.0 for consistent dependencies.
+
+  You may use [FVM][fvm] (Flutter Version Manager) for easy installation.
 
   ```sh
   fvm use
   ```
 
-## Dependencies
+### Dependencies
+
+[build-runner]: https://pub.dev/packages/build_runner
+[injectable]: https://pub.dev/packages/injectable
+[freezed]: https://pub.dev/packages/freezed
+[chopper]: https://pub.dev/packages/chopper
+[shared_preferences]: https://pub.dev/packages/shared_preferences
+[go_router]: https://pub.dev/packages/go_router
+[riverpod]: https://riverpod.dev
 
 Main packages that are used as foundation for this project.
 
-- [injectable](https://pub.dev/packages/injectable) -- Dependency injection
-  framework.
-- [freezed](https://pub.dev/packages/freezed) -- Data model with short and
-  simple syntax.
-- [chopper](https://pub.dev/packages/chopper) -- HTTP client service.
-- [shared_preferences](https://pub.dev/packages/shared_preferences) -- Local
-  storage.
-- [go_router](https://pub.dev/packages/go_router),
-  [go_router_builder](https://pub.dev/packages/go_router_builder) -- Web
-  friendly routing.
-- [riverpod](https://riverpod.dev) -- State management framework.
+- [injectable][injectable] -- Dependency injection framework.
+- [freezed][freezed] -- Data model with short and simple syntax.
+- [chopper][chopper] -- HTTP client service.
+- [shared_preferences][shared_preferences] -- Local storage.
+- [go_router][go_router] -- Web friendly routing.
+- [riverpod][riverpod] -- State management framework.
 
-Most of them need to generate its utilities with
-[build_runner](https://pub.dev/packages/build_runner).
+Most of them need to generate its utilities with [build_runner][build-runner].
 
-## Setup
+### Setup
 
 1. Install dependencies
 
-   ```bash
+   ```sh
    flutter pub get
    ```
 
 2. Intialize git hooks to validate commit messages
 
-   ```bash
+   ```sh
    dart run husky install
    ```
 
-3. Generate code.
+3. Create `.env` file on the project root. Use [`.env.example`](.env.example) as
+   a reference.
 
-   ```bash
+4. Build project environment.
+
+   ```sh
    dart run build_runner build -d
    ```
 
-4. Now you're good to go!
+5. Now you're good to go!
 
-   ```bash
+   ```sh
    # Check connected devices
    flutter devices
 
@@ -100,73 +107,89 @@ Most of them need to generate its utilities with
    flutter run -d <device-id>
    ```
 
-## API Documentation
+### API Documentation
 
-- [The Movie DB API Documentation][tmdb-api]
+- [The Movie DB API Documentation](https://developers.themoviedb.org)
 
-## Project Structures
+### Project Structures
 
-This project is follow the
-[Clean Architecture](https://medium.com/@DrunknCode/clean-architecture-simplified-and-in-depth-guide-026333c54454)
-principles.
+[clean-architecture]: https://medium.com/@DrunknCode/clean-architecture-simplified-and-in-depth-guide-026333c54454
 
-1. `/lib` — Source code
+This project is follow the [Clean Architecture][clean-architecture] principles.
 
-   1.1. `/domain` — Domain layer (Entities and services abstractions).
+[main.dart]: ./lib/main.dart
+[locator]: ./lib/service_locator.dart
 
-   1.2. `/infrastructures` — Infrastructure layer (Services implementations).
+- `/lib` -- Source code
 
-   1.3. `/interfaces` — Interfaces layer (Application routes, states, etc).
+  - [`main.dart`][main.dart] -- Application entry point.
 
-   1.4. `/use_cases` — Application logic layer.
+  - [`service_locator.dart`][locator] -- Service locator to get services that
+    registered by [injectable][injectable].
 
-## Git Conventions
+  - `/domain` -- Domain layer (Entities and services abstractions).
 
-We use [Conventional Commits](https://www.conventionalcommits.org) to handle Git
-commit messages, and Github PR titles.
+  - `/infrastructures` -- Infrastructure layer (Services implementations).
 
-Look at [`commitlint.yaml`](commitlint.yaml) to see supported commit
-types/scopes.
+  - `/interfaces` -- Interfaces layer (Application routes, states, etc).
 
-### Issue Title
+    - `/routes` -- Application routes and screen widgets.
+    - `/providers` -- Application UI states.
+    - `/widgets` -- Reusable widgets.
 
-```
+  - `/use_cases` -- Application logic layer.
+
+  - `/libs` -- Main constants and utilities. Other folders may contain this folder
+    name as well to define its own constants/utilities.
+
+### Git Conventions
+
+[conventional-commits]: https://www.conventionalcommits.org
+
+We use [Conventional Commits][conventional-commits] to handle Git commit messages,
+and Github PR titles.
+
+Look at [`commitlint.yaml`](commitlint.yaml) to see supported commit types/scopes.
+
+#### Issue Title
+
+```sh
 <type>(<scopes(optional)>): <content>
 ```
 
-Examples
+Examples:
 
 - `feat: add movies service`
 - `bug(interfaces): unresponsive movies page`
 - `test(use_cases): add tests for movies use cases`
 
-### Commit Message / PR Title
+##### Commit Message / PR Title
 
-```
+```sh
 <type>(<scopes(optional)>): <content> sv-<issue-number>
 ```
 
-Examples
+Examples:
 
 - `feat: add tv shows service sv-25`
 - `fix(interfaces): fix unresponsive movies page sv-250`
 - `fix(domain/infrastructures): fix error movies fetch sv-502`
 
-### Branch Name
+##### Branch Name
 
-```
+```sh
 <type>-<content>-sv-<issue-number>
 ```
 
-Examples
+Examples:
 
-- `chore-commilint-sv-1`
+- `chore-commitlint-sv-1`
 - `fix-unresponsive-movies-page-sv-250`
 
-## Others
+### Others
 
 Other documentations that might be useful:
 
-- [Dart Language](https://dart.dev/guides)
+- [Dart Docs](https://dart.dev/guides)
 - [Flutter Docs](https://docs.flutter.dev/)
 - [Material Design](https://material.io)

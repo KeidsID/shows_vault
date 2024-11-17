@@ -17,7 +17,7 @@ class EnvSchemaImpl implements EnvSchema {
   const EnvSchemaImpl();
 
   @override
-  bool get usePathUrlStrategy => _Env.usePathUrlStrategy;
+  bool get isUsePathUrlStrategy => _Env.usePathUrlStrategy;
 
   @override
   String get tmdbAccessToken => _Env.tmdbApiAccessToken;

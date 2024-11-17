@@ -1,40 +1,5 @@
 import "package:danger_core/danger_core.dart";
 
-class PRConfig {
-  final RegExp? titlePattern;
-  final RegExp? branchPattern;
-  final bool requireAssignee;
-
-  PRConfig({
-    this.titlePattern,
-    this.branchPattern,
-    this.requireAssignee = false,
-  });
-}
-
-abstract class ConventionalCommitConfig {
-  static const List<String> types = [
-    "build",
-    "chore",
-    "docs",
-    "feat",
-    "fix",
-    "refactor",
-    "revert",
-    "style",
-    "test",
-  ];
-
-  static const List<String> scopes = [
-    "domain",
-    "infrastructures",
-    "use_cases",
-    "interfaces",
-    "lib",
-    "root",
-  ];
-}
-
 final config = PRConfig(
   titlePattern: RegExp(
     '^(${ConventionalCommitConfig.types.join("|")})'
@@ -52,6 +17,20 @@ final config = PRConfig(
 );
 
 final pr = danger.github.pr;
+
+void main() {
+  if (config.titlePattern != null) {
+    checkTitle(config.titlePattern!);
+  }
+
+  if (config.branchPattern != null) {
+    checkBranch(config.branchPattern!);
+  }
+
+  if (config.requireAssignee) {
+    checkAssignee();
+  }
+}
 
 void checkTitle(RegExp titlePattern) {
   final isTitleValid = titlePattern.hasMatch(pr.title);
@@ -83,16 +62,37 @@ void checkAssignee() {
   }
 }
 
-void main() {
-  if (config.titlePattern != null) {
-    checkTitle(config.titlePattern!);
-  }
+class PRConfig {
+  final RegExp? titlePattern;
+  final RegExp? branchPattern;
+  final bool requireAssignee;
 
-  if (config.branchPattern != null) {
-    checkBranch(config.branchPattern!);
-  }
+  PRConfig({
+    this.titlePattern,
+    this.branchPattern,
+    this.requireAssignee = false,
+  });
+}
 
-  if (config.requireAssignee) {
-    checkAssignee();
-  }
+abstract final class ConventionalCommitConfig {
+  static const List<String> types = [
+    "build",
+    "chore",
+    "docs",
+    "feat",
+    "fix",
+    "refactor",
+    "revert",
+    "style",
+    "test",
+  ];
+
+  static const List<String> scopes = [
+    "domain",
+    "infrastructures",
+    "use_cases",
+    "interfaces",
+    "lib",
+    "root",
+  ];
 }
