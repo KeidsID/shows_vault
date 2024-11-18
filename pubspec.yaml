@@ -4,8 +4,8 @@ publish_to: "none"
 version: 0.1.1
 
 environment:
-  sdk: 3.5.0
-  flutter: 3.24.0
+  sdk: ^3.5.0
+  flutter: "<=3.24.0 <3.25.0"
 
 dependencies:
   chopper: ^8.0.3

@@ -1,9 +1,9 @@
 # Shows Vault
 
-[dart-badge]: https://img.shields.io/badge/SDK-v3.5.0-red?style=flat&logo=dart&logoColor=2cb8f7&labelColor=333333&color=01579b
-[fl-badge]: https://img.shields.io/badge/SDK-v3.24.0-red?style=flat&logo=flutter&logoColor=2cb8f7&labelColor=333333&color=01579b
+[dart-badge]: https://img.shields.io/badge/SDK-^3.5.0-red?style=flat&logo=dart&logoColor=2cb8f7&labelColor=333333&color=01579b
+[fl-badge]: https://img.shields.io/badge/SDK-^3.24.0-red?style=flat&logo=flutter&logoColor=2cb8f7&labelColor=333333&color=01579b
 
-![Dart version 3.5.0][dart-badge] ![Flutter version 3.24.0][fl-badge]
+![Dart version 3.5.0 or higher][dart-badge] ![Flutter version 3.24.0 or higher][fl-badge]
 
 Explore the world of movies and tv shows with **Shows Vault**, your go-to source
 for comprehensive information and in-depth credits on all your favorite films
@@ -42,7 +42,8 @@ Anything you need to know if you want to contribute or just want to have a look.
 [fl-archive]: https://docs.flutter.dev/release/archive
 [fvm]: https://fvm.app/documentation
 
-- [Flutter][fl-archive] v3.24.0 for consistent dependencies.
+- [Flutter][fl-archive] with the same version as defined on [`.fvmrc`](.fvmrc)
+  file.
 
   You may use [FVM][fvm] (Flutter Version Manager) for easy installation.
 
